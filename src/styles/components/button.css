@@ -1,0 +1,22 @@
+@layer components {
+  .gf-button {
+    @apply inline-flex items-center justify-center font-semibold transition-all duration-200;
+    @apply px-[var(--space-md)] py-[var(--space-sm)] rounded-[var(--radius-md)];
+  }
+
+  .gf-button--solid {
+    background-color: var(--button-bg-default);
+    color: var(--button-text-default);
+  }
+
+  .gf-button--outline {
+    border: 1px solid var(--button-text-default);
+    color: var(--button-text-default);
+    background: transparent;
+  }
+
+  .gf-button--alt {
+    background-color: var(--button-bg-alt);
+    color: var(--button-text-alt);
+  }
+}

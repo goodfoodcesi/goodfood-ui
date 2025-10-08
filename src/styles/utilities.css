@@ -1,0 +1,15 @@
+@utility bg-button {
+  background-color: var(--button-bg-default);
+}
+
+@utility text-button {
+  color: var(--button-text-default);
+}
+
+@utility bg-button-alt {
+  background-color: var(--button-bg-alt);
+}
+
+@utility text-button-alt {
+  color: var(--button-text-alt);
+}

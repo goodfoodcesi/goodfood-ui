@@ -1,0 +1,42 @@
+:root {
+  /* === Palette de base === */
+  --white: #ffffff;
+  --black: #1f1f1f;
+  --gray-50: #f5f5f8;
+  --gray-100: #e8e8e8;
+  --gray-200: #d9d9d9;
+  --gray-700: #687887;
+  --gray-800: #161618;
+  --yellow-500: #ffbf00;
+  --yellow-600: #e6ad00;
+
+  /* === Rôles === */
+  --text-default: var(--gray-800);
+  --text-light: var(--gray-700);
+  --text-alt: var(--white);
+
+  --background: var(--white);
+  --foreground: var(--gray-800);
+  --border: var(--gray-100);
+
+  /* === Buttons === */
+  --button-bg-default: var(--yellow-500);
+  --button-bg-alt: var(--black);
+  --button-bg-alt-light: var(--gray-200);
+
+  --button-text-default: var(--gray-800);
+  --button-text-alt: var(--white);
+}
+
+.dark {
+  --background: var(--black);
+  --foreground: var(--white);
+  --border: var(--gray-700);
+
+  --button-bg-default: var(--yellow-600);
+  --button-bg-alt: var(--gray-800);
+  --button-bg-alt-light: var(--gray-200);
+
+  --button-text-default: var(--white);
+  --button-text-alt: var(--gray-50);
+}
