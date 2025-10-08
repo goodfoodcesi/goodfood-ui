@@ -31,7 +31,13 @@ export const SolidAlt: Story = {
     variant: "solid",
     color: "alt",
     glow: false,
-    className: "w-[311px]"
+    className: "w-[311px]",
+  },
+  parameters: {
+    backgrounds: {
+      default: "custom-dark",
+      values: [{ name: "custom-dark", value: "#1f1f1f" }],
+    },
   },
 };
 
@@ -41,7 +47,7 @@ export const Outline: Story = {
     variant: "outline",
     color: "default",
     glow: false,
-    className: "w-[311px]"
+    className: "w-[311px]",
   },
 };
 
@@ -50,7 +56,13 @@ export const OutlineAlt: Story = {
     children: "Button",
     variant: "outline",
     color: "alt",
-    className: "w-[311px]"
+    className: "w-[311px]",
+  },
+  parameters: {
+    backgrounds: {
+      default: "custom-dark",
+      values: [{ name: "custom-dark", value: "#1f1f1f" }],
+    },
   },
 };
 

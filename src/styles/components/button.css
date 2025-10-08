@@ -1,22 +1,55 @@
 @layer components {
   .gf-button {
-    @apply inline-flex items-center justify-center font-semibold transition-all duration-200;
-    @apply px-[var(--space-md)] py-[var(--space-sm)] rounded-[var(--radius-md)];
+    @apply font-semibold rounded-[8px] tracking-wide px-[10px] py-[12px] text-base transition-all duration-200 flex items-center justify-center gap-2;
   }
 
-  .gf-button--solid {
+  /* === Solid variants === */
+  .gf-button--solid-default {
     background-color: var(--button-bg-default);
     color: var(--button-text-default);
   }
 
-  .gf-button--outline {
-    border: 1px solid var(--button-text-default);
-    color: var(--button-text-default);
-    background: transparent;
-  }
-
-  .gf-button--alt {
+  .gf-button--solid-alt {
     background-color: var(--button-bg-alt);
     color: var(--button-text-alt);
+  }
+
+  .gf-button--solid-alt_light {
+    background-color: var(--button-bg-alt-light);
+    color: var(--button-text-default);
+  }
+
+  /* === Outline variants === */
+  .gf-button--outline-default {
+    border: 1px solid var(--button-text-default);
+    color: var(--button-text-default);
+    background-color: transparent;
+  }
+
+  .gf-button--outline-alt {
+    border: 1px solid var(--button-text-alt);
+    color: var(--button-text-alt);
+    background-color: transparent;
+  }
+
+  /* === Hover === */
+  .gf-button--solid-default:hover {
+    background-color: var(--yellow-600);
+  }
+
+  .gf-button--solid-alt:hover {
+    opacity: 0.9;
+  }
+
+  .gf-button--solid-alt_light:hover {
+    filter: brightness(0.95);
+  }
+
+  .gf-button--outline-default:hover {
+    background-color: color-mix(in srgb, var(--button-text-default) 5%, transparent);
+  }
+
+  .gf-button--outline-alt:hover {
+    background-color: color-mix(in srgb, var(--button-text-alt) 10%, transparent);
   }
 }
