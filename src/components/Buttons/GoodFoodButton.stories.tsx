@@ -7,7 +7,6 @@ const meta: Meta<typeof GoodFoodButton> = {
   argTypes: {
     variant: { control: "radio", options: ["solid", "outline"] },
     color: { control: "radio", options: ["default", "alt", "alt_light"] },
-    glow: { control: "boolean" },
     price: { control: "text" },
   },
 };
@@ -20,8 +19,7 @@ export const Solid: Story = {
     children: "Button",
     variant: "solid",
     color: "default",
-    glow: false,
-    className: "w-[311px]"
+    className: "w-[311px]",
   },
 };
 
@@ -30,7 +28,6 @@ export const SolidAlt: Story = {
     children: "Button",
     variant: "solid",
     color: "alt",
-    glow: false,
     className: "w-[311px]",
   },
   parameters: {
@@ -46,7 +43,6 @@ export const Outline: Story = {
     children: "Button",
     variant: "outline",
     color: "default",
-    glow: false,
     className: "w-[311px]",
   },
 };

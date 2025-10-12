@@ -5,6 +5,7 @@
   --gray-50: #f5f5f8;
   --gray-100: #e8e8e8;
   --gray-200: #d9d9d9;
+  --gray-600: #4a5565;
   --gray-700: #687887;
   --gray-800: #161618;
   --yellow-500: #ffbf00;
@@ -26,6 +27,24 @@
 
   --button-text-default: var(--gray-800);
   --button-text-alt: var(--white);
+
+  /* === Tag === */
+    --tag-bg-default: var(--white);
+    --tag-text-default: var(--black);
+
+  /* === Border === */
+  --border-default: var(--gray-100);
+  --border-default: var(--gray-100);
+  
+  /* === Inputs === */
+  --input-border-default: var(--gray-100);
+  --input-border-active: var(--black);
+  
+  --input-text: var(--gray-800);
+
+  /* === Label === */
+  --label-text-color: var(--black);
+
 }
 
 .dark {
@@ -39,4 +58,17 @@
 
   --button-text-default: var(--white);
   --button-text-alt: var(--gray-50);
+
+    /* === Border === */
+  --border-default: var(--gray-100);
+  --border-default: var(--gray-100);
+  
+  /* === Inputs === */
+  --input-border-default: var(--gray-100);
+  --input-border-active: var(--black);
+  
+  --input-text: var(--gray-800);
+
+  /* === Label === */
+  --label-text-color: var(--black);
 }

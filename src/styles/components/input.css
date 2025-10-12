@@ -1,0 +1,60 @@
+@layer components {
+
+  /* Input Texte */
+
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .gf-input {
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 10px;
+    border: solid 2px var(--input-border-default);
+    
+    color: var(--input-text);
+    transition: none;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .gf-input:focus-visible {
+    outline: none;
+    box-shadow: none;
+    border-color:none;
+  }
+
+  .gf-input:focus {
+    border: solid 2px var(--input-border-default);
+  }
+
+  .gf-input-text-label {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+
+  /* Input File */
+
+  .gf-input-file-notice {
+    font-size: 14px;
+    color: var(--gray-600);
+    margin-top: 1rem;
+  }
+
+  .gf-input-file-subtitle {
+    font-size: 10px;
+    color: var(--gray-700);
+    margin-top: 1rem;
+  }
+
+    .gf-input-file-logo {
+      background-color: #393939;
+      padding: 10px;
+      border-radius: 100%;
+  }
+
+}
