@@ -5,78 +5,40 @@ Elle sert de base commune pour les projets GoodFood (Next.js, applications inter
 
 ---
 
-## 🚀 Caractéristiques principales
-
-- ⚛️ **React + TypeScript** : composants typés et réutilisables.  
-- 🎨 **TailwindCSS v4** : styles modulaires basés sur des *tokens CSS* (couleurs, radius, spacing, etc.).  
-- 🧩 **Storybook** : documentation et test visuel de chaque composant.  
-- 🪄 **Compatible ShadCN UI** : possibilité d’importer des composants ShadCN et de les personnaliser selon la charte GoodFood.
-
----
-
-## 📦 Installation
-
-**Commande :**  
-npm install  
-ou  
-yarn install
-
----
-
 ## 🧰 Structure du projet
 
 src/  
 ├─ components/              → Tous les composants React  
 │  ├─ button/  
-│  │  ├─ GoodFoodButton.tsx       → Composant principal  
-│  │  └─ GoodFoodButton.stories.tsx → Storybook associé  
+│  │  ├─ GoodFoodButton.tsx  
+│  │  └─ GoodFoodButton.stories.tsx  
 │  ├─ input/  
 │  │  ├─ GoodFoodInput.tsx  
 │  │  └─ GoodFoodInput.stories.tsx  
 │  └─ ...  
 │  
 ├─ styles/  
-│  ├─ tailwind.css          → Point d’entrée unique des styles  
+│  ├─ index.css             → Point d’entrée unique des styles exportés  
 │  ├─ tokens/               → Variables globales (couleurs, radius, spacing...)  
 │  │  ├─ colors.css  
 │  │  ├─ radius.css  
 │  │  ├─ spacing.css  
 │  │  └─ typography.css  
-│  ├─ utilities.css         → Classes utilitaires custom  
-│  └─ components/           → Styles spécifiques à un composant  
-│     └─ button.css  
+│  ├─ components/           → Styles spécifiques à un composant  
+│  │  └─ button.css  
+│  └─ utilities.css         → Classes utilitaires custom  
 │  
 └─ lib/  
    └─ utils.ts              → Fonctions utilitaires partagées
 
 ---
 
-## 🧱 Nomenclature des composants
+## 🚀 Présentation
 
-Chaque composant doit suivre cette structure :
-
-src/components/nom/  
-├── GoodFoodNom.tsx  
-└── GoodFoodNom.stories.tsx
-
-✅ Exemple :  
-src/components/button/  
-├── GoodFoodButton.tsx  
-└── GoodFoodButton.stories.tsx
-
-**Convention :**
-- Les composants commencent toujours par `GoodFood` (ex: `GoodFoodButton`, `GoodFoodInput`).
-- Les stories portent le même nom et définissent les variantes (`Solid`, `Outline`, etc.).
-
----
-
-## 🎨 Thème et Tokens
-
-Toutes les couleurs, radius, espacements et typos sont définis dans :
-src/styles/tokens/
-
-Utilisation des variables dans un composant :
-className="bg-[var(--button-bg-default)] text-[var(--button-text-alt)]"
+- ⚛️ **React + TypeScript** : composants typés et réutilisables.  
+- 🎨 **TailwindCSS v4** : styles modulaires basés sur des *tokens CSS* (couleurs, radius, spacing, etc.).  
+- 🧩 **Storybook** : documentation et test visuel de chaque composant.  
+- 🪄 **Compatible ShadCN UI** : possibilité d’importer et de personnaliser les composants ShadCN selon la charte GoodFood.
 
 ---
 
@@ -84,59 +46,91 @@ className="bg-[var(--button-bg-default)] text-[var(--button-text-alt)]"
 
 Storybook permet de visualiser et tester chaque composant individuellement dans un environnement isolé.
 
-**Commande :**  
-```bash
+```BASH
 npm run storybook
 ```
 
-Ensuite ouvre l’URL :  
+Ensuite, ouvre ton navigateur sur :  
 http://localhost:6006
 
 ---
 
-## 🧱 Ajouter un nouveau composant
+## 🧱 Nomenclature des composants
 
-1. Créer un dossier dans `src/components/` (ex: `card/`)  
-2. Ajouter :  
-   - GoodFoodCard.tsx  
-   - GoodFoodCard.stories.tsx  
-3. Ajouter les styles ou tokens nécessaires dans `src/styles/tokens/`  
-4. Ajouter les styles spécifiques dans `src/styles/components/`
+Chaque composant suit cette structure :
+
+src/components/nom/  
+├── GoodFoodNom.tsx  
+└── GoodFoodNom.stories.tsx
+
+**Convention :**
+- Les composants commencent toujours par `GoodFood` (ex: `GoodFoodButton`, `GoodFoodInput`).  
+- Les stories portent le même nom et définissent les variantes (`Solid`, `Outline`, etc.).
+
+---
+
+## 🎨 Thème et Tokens
+
+Toutes les couleurs, radius, espacements et typos sont définis dans :  
+src/styles/tokens/
+
+Exemple d’utilisation dans un composant :  
+className="bg-[var(--button-bg-default)] text-[var(--button-text-alt)]"
 
 ---
 
 ## 🧾 Bonnes pratiques
 
 - ✅ Typage systématique avec `React.ComponentProps`.  
-- 🎨 Toujours utiliser les variables CSS (`var(--nom-variable)`) plutôt que des couleurs fixes.  
-- 🧱 Aucun import CSS dans les fichiers `.tsx` (centralisation via `tailwind.css`).  
-- 🧩 Tester chaque composant dans Storybook avant publication.
+- 🎨 Toujours utiliser les variables CSS (`var(--nom-variable)`) plutôt que des valeurs fixes.  
+- 🧱 Centraliser les styles dans `index.css` (pas d’import CSS dans les `.tsx`).  
+- 🧩 Tester chaque composant dans Storybook avant de le publier.
 
 ---
 
-## 🏁 Commandes utiles
+# ⚙️ Utilisation dans un autre projet (ex: Next.js)
 
-**Ouvrir Storybook**  
-```bash
-npm run storybook
+## 📦 Installation locale
+
+### 1️⃣ Ajouter la dépendance
+
+```BASH
+npm install @goodfoodcesi/goodfood-ui
 ```
 
-**Build de la librairie pour publication**  
-```bash
-npm run build
+
+---
+
+### 2️⃣ Importer les styles globaux
+
+Dans ton fichier global (souvent `app/globals.css` sous Next.js) :
+
+```CSS
+@import "@goodfoodcesi/goodfood-ui/index.css";
 ```
 
-**Lint du code**  
-```bash
-npm run lint
+> Cela applique la charte graphique et les tokens (couleurs, typos, radius, etc.) à ton projet.
+
+---
+
+### 3️⃣ Utiliser un composant
+
+```JSX
+import { GoodFoodButton } from "@goodfoodcesi/goodfood-ui";
+
+<GoodFoodButton label="Commander" variant="primary" />
+
 ```
 
 ---
 
-## 🧠 À venir
+## 🔄 Mettre à jour la librairie
 
-- Déploiement Storybook via CI/CD GitHub Actions.
-- Dockerfile
-- compose.yml
-- Publication npm sous `@goodfood/ui`.
-- Tuto sur comment utiliser la lib
+Quand tu modifies la lib (`goodfood-ui`) et veux propager les changements dans ton projet Next :
+---
+
+### 2️⃣ Réinstaller la dépendance dans ton projet Next
+
+```BASH
+npm update @goodfoodcesi/goodfood-ui
+```
