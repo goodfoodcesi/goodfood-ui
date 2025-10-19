@@ -20,7 +20,7 @@
     "lint": "eslint .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "version": "npm run build && git add dist"
+    "version": "npm run build && git add dist -f"
   },
   "repository": {
     "type": "git",
