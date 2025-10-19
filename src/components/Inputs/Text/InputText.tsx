@@ -28,3 +28,5 @@ export function InputText({ className, label, ...props }: InputTextProps) {
     </div>
   );
 }
+
+InputText.displayName = "InputText";

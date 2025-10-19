@@ -29,3 +29,5 @@ export function InputEmail({ className, label, ...props }: InputEmailProps) {
     </div>
   );
 }
+
+InputEmail.displayName = "InputEmail";
