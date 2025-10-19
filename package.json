@@ -30,7 +30,8 @@
     ".": {
       "import": "./dist/goodfood-ui.es.js",
       "require": "./dist/goodfood-ui.umd.js"
-    }
+    },
+    "./index.css": "./dist/index.css"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
