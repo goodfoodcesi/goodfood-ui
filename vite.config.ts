@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react"
 import tailwindcss from "@tailwindcss/vite"
 import dts from "vite-plugin-dts"
 import path from "path"
+import { copyFileSync, mkdirSync } from "fs"
 
 export default defineConfig({
   plugins: [
@@ -14,6 +15,15 @@ export default defineConfig({
       tsconfigPath: path.resolve(__dirname, "tsconfig.lib.json"),
       exclude: ["**/*.stories.tsx", "**/*.test.tsx"],
     }),
+    {
+      name: 'copy-css',
+      buildEnd() {
+        const src = path.resolve(__dirname, 'src/styles/tailwind.css')
+        const destDir = path.resolve(__dirname, 'dist/styles')
+        mkdirSync(destDir, { recursive: true })
+        copyFileSync(src, path.join(destDir, 'tailwind.css'))
+      },
+    },
   ],
   resolve: {
     alias: {

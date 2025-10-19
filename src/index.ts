@@ -8,3 +8,5 @@ export {InputEmail } from "./components/Inputs//Email/InputEmail"
 
 // === Utils ===
 export * from "./lib/utils"
+
+import "./styles/tailwind.css"
