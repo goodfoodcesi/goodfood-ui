@@ -1,3 +1,4 @@
+import './styles/tailwind.css'
 // === Composants ===
 export { GoodFoodButton } from "./components/Buttons/GoodFoodButton"
 export { InputFile } from "./components/Inputs/File/InputFile"
