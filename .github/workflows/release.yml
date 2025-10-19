@@ -1,6 +1,9 @@
 name: Build & Release Library
 
 on:
+  permissions:
+    contents: write
+
   push:
     tags:
       - 'v*'   # se déclenche sur les tags comme v0.1.0, v1.0.1, etc.
