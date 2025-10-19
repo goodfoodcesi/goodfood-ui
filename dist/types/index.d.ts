@@ -4,3 +4,4 @@ export { InputFile } from "./components/Inputs/File/InputFile";
 export { InputText } from "./components/Inputs/Text/InputText";
 export { InputEmail } from "./components/Inputs//Email/InputEmail";
 export * from "./lib/utils";
+import "./styles/tailwind.css";
