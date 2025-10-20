@@ -58,7 +58,7 @@ export function InputFile({
   return (
     <div className="input-wrapper flex flex-col gap-2">
       {label && (
-        <label className="gf-input-text-label text-sm font-medium text-gray-700">
+        <label className="gf-input gf-input-text-label text-sm font-medium text-gray-700">
           {label}
         </label>
       )}
@@ -73,12 +73,13 @@ export function InputFile({
       >
         <div className="flex justify-center">
           <div className="gf-input-file-logo">
-          <img src={FileSvg} className="w-[24px] h-[24px]" />
+            <img src={FileSvg} className="w-[24px] h-[24px]" />
           </div>
         </div>
 
         <p className="gf-input-file-notice">
-          Glissez vos fichiers ici ou <span className="underline">cliquez</span> pour importer
+          Glissez vos fichiers ici ou <span className="underline">cliquez</span>{" "}
+          pour importer
         </p>
 
         <p className="gf-input-file-subtitle text-xs text-gray-500">
@@ -99,7 +100,11 @@ export function InputFile({
       {files.length > 0 && (
         <ul className="mt-2 space-y-2">
           {files.map((file, index) => (
-            <FilePreview key={index} file={file} onDelete={() => handleDelete(index)} />
+            <FilePreview
+              key={index}
+              file={file}
+              onDelete={() => handleDelete(index)}
+            />
           ))}
         </ul>
       )}

@@ -20,11 +20,7 @@ export function InputText({ className, label, ...props }: InputTextProps) {
           {label}
         </label>
       )}
-      <Input
-        ref={ref}
-        className={cn(baseClasses, className)}
-        {...props}
-      />
+      <Input ref={ref} className={cn(baseClasses, className)} {...props} />
     </div>
   );
 }

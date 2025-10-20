@@ -1,6 +1,6 @@
 @layer components {
   .gf-button {
-    @apply font-semibold rounded-[8px] tracking-wide px-[10px] py-[12px] text-base transition-all duration-200 flex items-center justify-center gap-2;
+    @apply font-semibold rounded-[8px] tracking-wide px-[10px] py-[14px] text-base transition-all duration-200 flex items-center justify-center gap-2;
   }
 
   /* === Solid variants === */
