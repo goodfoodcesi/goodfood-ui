@@ -3312,7 +3312,7 @@ function at({
     e
   );
   return /* @__PURE__ */ v.jsxs("div", { className: "input-wrapper flex flex-col gap-2", children: [
-    t && /* @__PURE__ */ v.jsx("label", { className: "gf-input-text-label text-sm font-medium text-gray-700", children: t }),
+    t && /* @__PURE__ */ v.jsx("label", { className: "gf-input gf-input-text-label text-sm font-medium text-gray-700", children: t }),
     /* @__PURE__ */ v.jsxs(
       "div",
       {
@@ -3326,7 +3326,8 @@ function at({
           /* @__PURE__ */ v.jsxs("p", { className: "gf-input-file-notice", children: [
             "Glissez vos fichiers ici ou ",
             /* @__PURE__ */ v.jsx("span", { className: "underline", children: "cliquez" }),
-            " pour importer"
+            " ",
+            "pour importer"
           ] }),
           /* @__PURE__ */ v.jsx("p", { className: "gf-input-file-subtitle text-xs text-gray-500", children: "Fichier de taille 10MB maximum — PDF, PNG, JPEG" }),
           /* @__PURE__ */ v.jsx(
@@ -3343,7 +3344,14 @@ function at({
         ]
       }
     ),
-    d.length > 0 && /* @__PURE__ */ v.jsx("ul", { className: "mt-2 space-y-2", children: d.map((C, A) => /* @__PURE__ */ v.jsx(tt, { file: C, onDelete: () => S(A) }, A)) })
+    d.length > 0 && /* @__PURE__ */ v.jsx("ul", { className: "mt-2 space-y-2", children: d.map((C, A) => /* @__PURE__ */ v.jsx(
+      tt,
+      {
+        file: C,
+        onDelete: () => S(A)
+      },
+      A
+    )) })
   ] });
 }
 function tt({ file: e, onDelete: t }) {
@@ -3382,14 +3390,7 @@ function ot({ className: e, label: t, ...r }) {
         children: t
       }
     ),
-    /* @__PURE__ */ v.jsx(
-      ke,
-      {
-        ref: o,
-        className: Z("gf-input", e),
-        ...r
-      }
-    )
+    /* @__PURE__ */ v.jsx(ke, { ref: o, className: Z("gf-input", e), ...r })
   ] });
 }
 ot.displayName = "InputText";
