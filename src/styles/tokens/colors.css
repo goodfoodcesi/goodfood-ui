@@ -47,30 +47,34 @@
   
 }
 
+
+/* === MAPPING TAILWIND v4 === */
+/* Ajoute --color- pour que Tailwind reconnaisse les classes */
 @theme {
-  --background: var(--black);
-  --foreground: var(--white);
-  --border: var(--gray-700);
+  /* Palette de base */
+  --color-white: var(--white);
+  --color-black: var(--black);
+  --color-gray-50: var(--gray-50);
+  --color-gray-100: var(--gray-100);
+  --color-gray-200: var(--gray-200);
+  --color-gray-600: var(--gray-600);
+  --color-gray-700: var(--gray-700);
+  --color-gray-800: var(--gray-800);
+  --color-yellow-500: var(--yellow-500);
+  --color-yellow-600: var(--yellow-600);
 
-  --button-bg-default: var(--yellow-600);
-  --button-bg-alt: var(--gray-800);
-  --button-bg-alt-light: var(--gray-200);
+  /* Rôles sémantiques */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border-default);
 
-  --button-text-default: var(--white);
-  --button-text-alt: var(--gray-50);
+  /* Texte */
+  --color-text-default: var(--text-default);
+  --color-text-light: var(--text-light);
+  --color-text-alt: var(--text-alt);
 
-    /* === Border === */
-  --border-default: var(--gray-100);
-  --border-default: var(--gray-100);
-  
-  /* === Inputs === */
-  --input-border-default: var(--gray-100);
-  --input-border-active: var(--black);
-  
-  --input-text: var(--gray-800);
-
-  /* === Label === */
-  --label-text-color: var(--black);
-  
-
+  /* Boutons */
+  --color-button-default: var(--button-bg-default);
+  --color-button-alt: var(--button-bg-alt);
+  --color-button-alt-light: var(--button-bg-alt-light);
 }
