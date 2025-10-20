@@ -5,5 +5,8 @@ interface LogoProps {
     height?: number | string;
     className?: string;
 }
-export default function Logo({ variant, theme, width, height, className }: LogoProps): import("react/jsx-runtime").JSX.Element;
+export declare function Logo({ variant, theme, width, height, className, }: LogoProps): import("react/jsx-runtime").JSX.Element;
+export declare namespace Logo {
+    var displayName: string;
+}
 export {};
