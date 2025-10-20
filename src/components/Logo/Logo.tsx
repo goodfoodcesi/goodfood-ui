@@ -19,62 +19,64 @@ interface LogoProps {
   className?: string
 }
 
-export default function Logo({ 
-  variant = '1',
-  theme = 'dark',
+export function Logo({
+  variant = "1",
+  theme = "dark",
   width,
   height,
-  className = '' 
+  className = "",
 }: LogoProps) {
   // Sélection du logo selon le variant et le thème
   const logos = {
     dark: {
-      '1': LogoDark1,
-      '2': LogoDark2,
-      '3': LogoDark3,
-      '4': LogoDark4,
+      "1": LogoDark1,
+      "2": LogoDark2,
+      "3": LogoDark3,
+      "4": LogoDark4,
     },
     light: {
-      '1': LogoLight1,
-      '2': LogoLight2,
-      '3': LogoLight3,
-      '4': LogoLight4,
-    }
-  }
+      "1": LogoLight1,
+      "2": LogoLight2,
+      "3": LogoLight3,
+      "4": LogoLight4,
+    },
+  };
 
-  const logoSrc = logos[theme][variant]
+  const logoSrc = logos[theme][variant];
 
   // Gestion des dimensions
   const getStyle = (): React.CSSProperties => {
-    const style: React.CSSProperties = {}
-    
+    const style: React.CSSProperties = {};
+
     if (width) {
-      style.width = typeof width === 'number' ? `${width}px` : width
+      style.width = typeof width === "number" ? `${width}px` : width;
       if (!height) {
-        style.height = 'auto'
+        style.height = "auto";
       }
     }
-    
+
     if (height) {
-      style.height = typeof height === 'number' ? `${height}px` : height
+      style.height = typeof height === "number" ? `${height}px` : height;
       if (!width) {
-        style.width = 'auto'
+        style.width = "auto";
       }
     }
-    
-    return style
-  }
+
+    return style;
+  };
 
   // Si les SVG sont des composants React (avec SVGR)
-  if (typeof logoSrc === 'function') {
-    const LogoComponent = logoSrc as React.ComponentType<React.SVGProps<SVGSVGElement>>
+  if (typeof logoSrc === "function") {
+    const LogoComponent = logoSrc as React.ComponentType<
+      React.SVGProps<SVGSVGElement>
+    >;
     return (
-      <LogoComponent 
+      <LogoComponent
         style={getStyle()}
         className={className}
         aria-label="Logo"
       />
-    )
+    );
   }
 
   // Si les SVG sont des URLs (import par défaut)
@@ -85,5 +87,7 @@ export default function Logo({
       style={getStyle()}
       className={className}
     />
-  )
+  );
 }
+
+Logo.displayName = "Logo";
