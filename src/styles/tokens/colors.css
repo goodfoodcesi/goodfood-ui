@@ -47,7 +47,7 @@
   
 }
 
-.dark {
+@theme {
   --background: var(--black);
   --foreground: var(--white);
   --border: var(--gray-700);
@@ -71,4 +71,6 @@
 
   /* === Label === */
   --label-text-color: var(--black);
+  
+
 }
