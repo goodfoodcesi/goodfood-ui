@@ -11,9 +11,6 @@
   "files": [
     "dist"
   ],
-  "engines": {
-    "node": "22.20"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc -p tsconfig.lib.json",
