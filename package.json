@@ -25,10 +25,10 @@
   },
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/goodfood-ui.es.js",
-      "require": "./dist/goodfood-ui.umd.js"
-    },
-    "./index.css": "./dist/index.css"
+      "require": "./dist/goodfood-ui.cjs.js"
+    }
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
