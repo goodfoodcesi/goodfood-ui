@@ -9,6 +9,7 @@ export interface GoodFoodButtonProps extends React.ComponentProps<"button"> {
   variant?: VariantType;
   color?: ColorType;
   price?: string;
+  children?: React.ReactNode;
 }
 
 export const GoodFoodButton = React.forwardRef<HTMLButtonElement, GoodFoodButtonProps>(
