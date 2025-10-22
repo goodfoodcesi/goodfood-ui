@@ -28,6 +28,9 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/goodfood-ui.es.js",
       "require": "./dist/goodfood-ui.cjs.js"
+    },
+    "./index.css": {
+      "default": "./dist/index.css"
     }
   },
   "dependencies": {
