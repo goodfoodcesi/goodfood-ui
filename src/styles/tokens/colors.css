@@ -44,6 +44,12 @@
 
   /* === Label === */
   --label-text-color: var(--black);
+
+  /* Steps */
+
+  --steps-background-color: var(--gray-200);
+  --steps--active-background-color: var(--black);
+
   
 }
 
@@ -77,4 +83,11 @@
   --color-button-default: var(--button-bg-default);
   --color-button-alt: var(--button-bg-alt);
   --color-button-alt-light: var(--button-bg-alt-light);
+
+
+    /* Steps */
+
+  --steps-background-color: var(--gray-200);
+  --steps--active-background-color: var(--black);
+
 }
