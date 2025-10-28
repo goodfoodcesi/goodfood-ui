@@ -1,49 +1,37 @@
-@layer components {
-
-  /* Input Texte */
-
-  .steps-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-items: center;
-    gap: 10px;
-  }
-
-  .step {
-    height: 5px;
-    width: 100%;
-    border-radius: 4px;
-    background-color: var(--steps-background-color);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .step.active::after {
-    opacity: 1;
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    background-color: var(--steps--active-background-color);
-    animation-name: pending;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-  }
-
-
-
-  @keyframes pending {
-  0% {
-    opacity: 1;
-    width: 0;
-  }
-
-  90% {
-    width: 100%;
-  }
-  100% {
-    opacity: 0;
-  }
+.steps-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
 }
+
+.step {
+  height: 5px;
+  flex: 1;
+  border-radius: 4px;
+  background-color: var(--steps-background-color);
+  position: relative;
+  overflow: hidden;
 }
+
+/* Étape déjà passée */
+.step.passed {
+  background-color: var(--steps--active-background-color);
+}
+
+/* Étape en cours */
+.step.pending::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--steps--active-background-color);
+animation-name: pending; animation-duration: 1s; animation-iteration-count: infinite;
+}
+
+
+.step.empty {
+  background-color: var(--steps-background-color);
+}
+
+@keyframes pending { 0% { opacity: 1; width: 0; } 90% { width: 100%; } 100% { opacity: 0; } } 
