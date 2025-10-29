@@ -3381,7 +3381,7 @@ function d1({ file: e, onDelete: o }) {
 }
 function u1({ className: e, label: o, ...t }) {
   const r = m2(null);
-  return /* @__PURE__ */ u.jsxs("div", { className: "input-wrapper", children: [
+  return /* @__PURE__ */ u.jsxs("div", { className: "input-wrapper w-full", children: [
     o && /* @__PURE__ */ u.jsx(
       "label",
       {
