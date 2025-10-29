@@ -6,5 +6,5 @@ export { InputEmail } from "./components/Inputs/Email/InputEmail";
 export { InputPassword } from "./components/Inputs/Password/InputPassword";
 export { Logo } from "./components/Logo/Logo";
 export { Steps } from "./components/steps/Steps";
-export * from "./components/MultistepForm/MultistepForm";
+export { MultiStepForm } from "./components/MultistepForm/MultistepForm";
 export * from "./lib/utils";

@@ -129,21 +129,20 @@ const MultiStepFormBase = forwardRef<MultiStepFormHandle, MultiStepFormProps>(
 
           {/* Transition entre les étapes */}
           <div className="relative min-h-[200px]">
-            {stepsArray.map((child, i) =>
-              isValidElement(child) ? (
-                <div
-                  key={i}
-                  className={`transition-all duration-500 ease-in-out ${
-                    i === step
-                      ? "opacity-100 translate-x-0 relative"
-                      : "opacity-0 translate-x-10 absolute pointer-events-none"
-                  }`}
-                >
-                 {cloneElement(child as React.ReactElement<{ active?: boolean }>, { active: i === step })}
-
-                </div>
-              ) : null
-            )}
+{stepsArray.map((child, i) =>
+  isValidElement(child) ? (
+    <div
+      key={i}
+      className={`transition-all duration-500 ease-in-out ${
+        i === step
+          ? "opacity-100 translate-x-0 relative"
+          : "opacity-0 translate-x-10 absolute pointer-events-none"
+      }`}
+    >
+      {cloneElement(child as React.ReactElement<any>, { active: i === step })}
+    </div>
+  ) : null
+)}
           </div>
 
           {showDefaultActions && (
