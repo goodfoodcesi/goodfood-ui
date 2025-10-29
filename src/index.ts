@@ -1,4 +1,3 @@
-import { MultiStepForm } from './components/MultistepForm/MultistepForm'
 import './styles/tailwind.css'
 // === Composants ===
 export { GoodFoodButton } from "./components/Buttons/GoodFoodButton"

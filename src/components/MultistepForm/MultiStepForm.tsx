@@ -25,7 +25,8 @@ const MultiStepCtx = createContext<MultiStepContextValue | null>(null);
 
 export function useMultiStep() {
   const ctx = useContext(MultiStepCtx);
-  if (!ctx) throw new Error("useMultiStep must be used within <MultiStepForm />");
+  if (!ctx)
+    throw new Error("useMultiStep must be used within <MultiStepForm />");
   return ctx;
 }
 
@@ -106,14 +107,16 @@ const MultiStepFormBase = forwardRef<MultiStepFormHandle, MultiStepFormProps>(
     const prev = useCallback(() => setStep(step - 1), [setStep, step]);
     const goTo = useCallback((index: number) => setStep(index), [setStep]);
 
-    useImperativeHandle(ref, (): MultiStepFormHandle => ({ next, prev, goTo, getStep: () => step }), [
-      next,
-      prev,
-      goTo,
-      step,
-    ]);
+    useImperativeHandle(
+      ref,
+      (): MultiStepFormHandle => ({ next, prev, goTo, getStep: () => step }),
+      [next, prev, goTo, step]
+    );
 
-    const ctxValue = useMemo(() => ({ step, stepsCount, next, prev, goTo }), [step, stepsCount, next, prev, goTo]);
+    const ctxValue = useMemo(
+      () => ({ step, stepsCount, next, prev, goTo }),
+      [step, stepsCount, next, prev, goTo]
+    );
 
     return (
       <MultiStepCtx.Provider value={ctxValue}>
@@ -129,25 +132,32 @@ const MultiStepFormBase = forwardRef<MultiStepFormHandle, MultiStepFormProps>(
 
           {/* Transition entre les étapes */}
           <div className="relative min-h-[200px]">
-{stepsArray.map((child, i) =>
-  isValidElement(child) ? (
-    <div
-      key={i}
-      className={`transition-all duration-500 ease-in-out ${
-        i === step
-          ? "opacity-100 translate-x-0 relative"
-          : "opacity-0 translate-x-10 absolute pointer-events-none"
-      }`}
-    >
-      {cloneElement(child as React.ReactElement<any>, { active: i === step })}
-    </div>
-  ) : null
-)}
+            {stepsArray.map((child, i) =>
+              isValidElement(child) ? (
+                <div
+                  key={i}
+                  className={`transition-all duration-500 ease-in-out ${
+                    i === step
+                      ? "opacity-100 translate-x-0 relative"
+                      : "opacity-0 translate-x-10 absolute pointer-events-none"
+                  }`}
+                >
+                  {cloneElement(child as React.ReactElement<any>, {
+                    active: i === step,
+                  })}
+                </div>
+              ) : null
+            )}
           </div>
 
           {showDefaultActions && (
             <div className="mt-6 flex items-center justify-between">
-              <button type="button" onClick={prev} disabled={step === 0} className="btn-secondary">
+              <button
+                type="button"
+                onClick={prev}
+                disabled={step === 0}
+                className="btn-secondary"
+              >
                 {prevLabel}
               </button>
               <button type="button" onClick={next} className="btn-primary">
