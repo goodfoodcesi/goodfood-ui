@@ -1,3 +1,4 @@
+import { MultiStepForm } from './components/MultistepForm/MultistepForm'
 import './styles/tailwind.css'
 // === Composants ===
 export { GoodFoodButton } from "./components/Buttons/GoodFoodButton"
@@ -8,7 +9,7 @@ export { InputPassword } from "./components/Inputs/Password/InputPassword"
 export { Logo } from "./components/Logo/Logo"
 export { Steps } from "./components/steps/Steps"
 
-export * from "./components/MultistepForm/MultistepForm";
+export { MultiStepForm } from "./components/MultistepForm/MultistepForm";
 
 
 // === Utils ===
