@@ -1,4 +1,3 @@
-// packages/ui/components/MultiStepForm/MultiStepForm.tsx
 import React, {
   Children,
   cloneElement,
