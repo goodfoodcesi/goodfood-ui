@@ -1,11 +1,10 @@
 import * as React from "react";
 type VariantType = "solid" | "outline";
 type ColorType = "default" | "alt" | "alt_light";
-export interface GoodFoodButtonProps extends React.ComponentProps<"button"> {
+export declare const GoodFoodButton: React.ForwardRefExoticComponent<Omit<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> & {
     variant?: VariantType;
     color?: ColorType;
     price?: string;
     children?: React.ReactNode;
-}
-export declare const GoodFoodButton: React.ForwardRefExoticComponent<Omit<GoodFoodButtonProps, "ref"> & React.RefAttributes<HTMLButtonElement>>;
+} & React.RefAttributes<HTMLButtonElement>>;
 export {};
