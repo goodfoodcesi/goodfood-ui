@@ -58,7 +58,7 @@ export function InputFile({
   return (
     <div className="input-wrapper flex flex-col gap-2">
       {label && (
-        <label className="gf-input gf-input-text-label text-sm font-medium text-gray-700">
+        <label className="gf-input-text-label text-sm font-medium text-gray-700">
           {label}
         </label>
       )}

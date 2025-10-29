@@ -11,6 +11,7 @@ import React, {
   useImperativeHandle,
 } from "react";
 import { Steps } from "../steps/Steps";
+import { GoodFoodButton } from "../Buttons/GoodFoodButton";
 
 type MultiStepContextValue = {
   step: number;
@@ -68,7 +69,6 @@ const MultiStepFormBase = forwardRef<MultiStepFormHandle, MultiStepFormProps>(
       showHeader = true,
       renderHeader,
       showDefaultActions = true,
-      nextLabel = "Suivant",
       prevLabel = "Précédent",
       className,
       children,
@@ -97,6 +97,7 @@ const MultiStepFormBase = forwardRef<MultiStepFormHandle, MultiStepFormProps>(
         if (!ok) return;
       }
       if (step >= stepsCount - 1) {
+        setStep(stepsCount);
         await onFinish?.();
         return;
       }
@@ -149,21 +150,43 @@ const MultiStepFormBase = forwardRef<MultiStepFormHandle, MultiStepFormProps>(
             )}
           </div>
 
-          {showDefaultActions && (
-            <div className="mt-6 flex items-center justify-between">
-              <button
-                type="button"
-                onClick={prev}
-                disabled={step === 0}
-                className="btn-secondary"
-              >
-                {prevLabel}
-              </button>
-              <button type="button" onClick={next} className="btn-primary">
-                {step === stepsCount - 1 ? "Terminer" : nextLabel}
-              </button>
-            </div>
-          )}
+{showDefaultActions && (
+  <div className="mt-6 flex items-center justify-between gap-4">
+    <GoodFoodButton
+      type="button"
+      variant="outline"
+      color="default"
+      onClick={prev}
+      disabled={step === 0}
+      className="flex-1"
+    >
+      {prevLabel}
+    </GoodFoodButton>
+
+    {step === stepsCount - 1 ? (
+      <GoodFoodButton
+        type="button"
+        variant="solid"
+        color="default"
+        onClick={next}
+        className="flex-1"
+      >
+        Terminer
+      </GoodFoodButton>
+    ) : (
+      <GoodFoodButton
+        type="button"
+        variant="solid"
+        color="alt"
+        onClick={next}
+        className="flex-1"
+      >
+        Suivant
+      </GoodFoodButton>
+    )}
+  </div>
+)}
+
         </div>
       </MultiStepCtx.Provider>
     );

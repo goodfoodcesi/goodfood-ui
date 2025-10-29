@@ -52,4 +52,9 @@
   .gf-button--outline-alt:hover {
     background-color: color-mix(in srgb, var(--button-text-alt) 10%, transparent);
   }
+
+.gf-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 }

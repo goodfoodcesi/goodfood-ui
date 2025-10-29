@@ -5,12 +5,13 @@ import { cn } from "../../lib/utils";
 type VariantType = "solid" | "outline";
 type ColorType = "default" | "alt" | "alt_light";
 
-export interface GoodFoodButtonProps extends React.ComponentProps<"button"> {
+
+type GoodFoodButtonProps = React.ComponentPropsWithoutRef<"button"> & {
   variant?: VariantType;
   color?: ColorType;
   price?: string;
   children?: React.ReactNode;
-}
+};
 
 export const GoodFoodButton = React.forwardRef<HTMLButtonElement, GoodFoodButtonProps>(
   (
