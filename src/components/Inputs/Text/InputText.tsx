@@ -11,7 +11,7 @@ export function InputText({ className, label, ...props }: InputTextProps) {
   const baseClasses = "gf-input";
 
   return (
-    <div className="input-wrapper">
+    <div className="input-wrapper w-full">
       {label && (
         <label
           htmlFor={props.id}
