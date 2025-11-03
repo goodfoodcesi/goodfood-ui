@@ -3526,7 +3526,10 @@ const M1 = r0(null), e0 = M2(
       [w, M, F, R, S]
     );
     return /* @__PURE__ */ u.jsx(M1.Provider, { value: T, children: /* @__PURE__ */ u.jsxs("div", { className: h, children: [
-      a && (i ? i({ step: w, stepsCount: M }) : /* @__PURE__ */ u.jsx("div", { className: "mb-4", children: /* @__PURE__ */ u.jsx(Q2, { currentStep: w + 1, steps: M }) })),
+      a && /* @__PURE__ */ u.jsxs("div", { className: "mb-4 space-y-3", children: [
+        /* @__PURE__ */ u.jsx(Q2, { currentStep: w + 1, steps: M }),
+        i && i({ step: w, stepsCount: M })
+      ] }),
       /* @__PURE__ */ u.jsx("div", { className: "relative min-h-[200px]", children: H.map(
         (N, p) => s0(N) ? /* @__PURE__ */ u.jsx(
           "div",
