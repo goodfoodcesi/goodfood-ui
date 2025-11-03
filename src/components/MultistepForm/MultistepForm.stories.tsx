@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { MultiStepForm } from "./MultistepForm";
+import { MultiStepForm } from "./MultiStepForm";
 import { InputText } from "../Inputs/Text/InputText"; 
 
 const meta: Meta<typeof MultiStepForm> = {

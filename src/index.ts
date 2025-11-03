@@ -8,7 +8,7 @@ export { InputPassword } from "./components/Inputs/Password/InputPassword"
 export { Logo } from "./components/Logo/Logo"
 export { Steps } from "./components/steps/Steps"
 
-export { MultiStepForm } from "./components/MultistepForm/MultistepForm";
+export { MultiStepForm } from "./components/MultiStepForm/MultiStepForm";
 
 
 // === Utils ===
