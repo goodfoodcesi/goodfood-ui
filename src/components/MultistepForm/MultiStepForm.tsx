@@ -123,10 +123,8 @@ const MultiStepFormBase = forwardRef<MultiStepFormHandle, MultiStepFormProps>(
         <div className={className}>
           {showHeader && (
             <div className="mb-4 space-y-3">
-              {/* Steps toujours visibles si showHeader = true */}
-              <Steps currentStep={step + 1} steps={stepsCount} />
-              {/* Si tu fournis un header custom, il s’ajoute juste en dessous */}
               {renderHeader && renderHeader({ step, stepsCount })}
+              <Steps currentStep={step + 1} steps={stepsCount} />
             </div>
           )}
 
