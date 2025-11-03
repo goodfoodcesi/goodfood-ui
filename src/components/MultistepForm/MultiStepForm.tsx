@@ -121,14 +121,14 @@ const MultiStepFormBase = forwardRef<MultiStepFormHandle, MultiStepFormProps>(
     return (
       <MultiStepCtx.Provider value={ctxValue}>
         <div className={className}>
-          {showHeader &&
-            (renderHeader ? (
-              renderHeader({ step, stepsCount })
-            ) : (
-              <div className="mb-4">
-                <Steps currentStep={step + 1} steps={stepsCount} />
-              </div>
-            ))}
+          {showHeader && (
+            <div className="mb-4 space-y-3">
+              {/* Steps toujours visibles si showHeader = true */}
+              <Steps currentStep={step + 1} steps={stepsCount} />
+              {/* Si tu fournis un header custom, il s’ajoute juste en dessous */}
+              {renderHeader && renderHeader({ step, stepsCount })}
+            </div>
+          )}
 
           {/* Transition entre les étapes */}
           <div className="relative min-h-[200px]">
@@ -150,43 +150,42 @@ const MultiStepFormBase = forwardRef<MultiStepFormHandle, MultiStepFormProps>(
             )}
           </div>
 
-{showDefaultActions && (
-  <div className="mt-6 flex items-center justify-between gap-4">
-    <GoodFoodButton
-      type="button"
-      variant="outline"
-      color="default"
-      onClick={prev}
-      disabled={step === 0}
-      className="flex-1"
-    >
-      {prevLabel}
-    </GoodFoodButton>
+          {showDefaultActions && (
+            <div className="mt-6 flex items-center justify-between gap-4">
+              <GoodFoodButton
+                type="button"
+                variant="outline"
+                color="default"
+                onClick={prev}
+                disabled={step === 0}
+                className="flex-1"
+              >
+                {prevLabel}
+              </GoodFoodButton>
 
-    {step === stepsCount - 1 ? (
-      <GoodFoodButton
-        type="button"
-        variant="solid"
-        color="default"
-        onClick={next}
-        className="flex-1"
-      >
-        Terminer
-      </GoodFoodButton>
-    ) : (
-      <GoodFoodButton
-        type="button"
-        variant="solid"
-        color="alt"
-        onClick={next}
-        className="flex-1"
-      >
-        Suivant
-      </GoodFoodButton>
-    )}
-  </div>
-)}
-
+              {step === stepsCount - 1 ? (
+                <GoodFoodButton
+                  type="button"
+                  variant="solid"
+                  color="default"
+                  onClick={next}
+                  className="flex-1"
+                >
+                  Terminer
+                </GoodFoodButton>
+              ) : (
+                <GoodFoodButton
+                  type="button"
+                  variant="solid"
+                  color="alt"
+                  onClick={next}
+                  className="flex-1"
+                >
+                  Suivant
+                </GoodFoodButton>
+              )}
+            </div>
+          )}
         </div>
       </MultiStepCtx.Provider>
     );
